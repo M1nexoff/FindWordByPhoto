@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.main.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/background_img"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imgQuestion1"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/background_img"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imgQuestion2"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/background_img"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imgQuestion3"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/background_img"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imgQuestion4"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linerAnswers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Answer" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Answer" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Answer" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Answer" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Answer" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Answer" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Answer" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Answer" />
+
+        </LinearLayout>
+        =
+
+        <LinearLayout
+            android:id="@+id/linerVariant1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Variant" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Variant" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Variant" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Variant" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Variant" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Variant" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linerVariant2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Variant" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Variant" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Variant" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Variant" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Variant" />
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/Button.Variant" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
