@@ -28,6 +28,7 @@ public class MainPresenter implements MainContract.Presenter {
                 answers.add(null);
             }
         }
+        view.setLevel(level+1);
         view.setImages(question.getImages());
         view.setVariants(question.getVariant());
         for (int i = 0; i < question.getVariant().length(); i++) {

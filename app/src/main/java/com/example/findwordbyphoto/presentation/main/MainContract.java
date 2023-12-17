@@ -12,6 +12,7 @@ public interface MainContract {
         void showDialogNext();
         void setImages(List<Integer> images);
         void clearAnswer();
+        void setLevel(int level);
         void setVariants(String variants);
         void setVisibleVariant(int index);
         void setInvisibleVariant(int index);

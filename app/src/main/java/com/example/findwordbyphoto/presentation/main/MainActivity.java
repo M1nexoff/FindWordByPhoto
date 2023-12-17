@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.example.findwordbyphoto.R;
 import com.example.findwordbyphoto.presentation.dialog.*;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private List<ImageView> images;
     private List<Button> answers = new ArrayList<>();
     private List<Button> variants = new ArrayList<>();
+    private TextView level;
     private MainContract.Presenter presenter;
 
     @Override
@@ -25,10 +27,12 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         setContentView(R.layout.activity_main);
         initialize();
         presenter = new MainPresenter(this);
-        presenter.setQuestion(); // Initialize the first question
+        presenter.setQuestion();
     }
 
     private void initialize() {
+        level = findViewById(R.id.level);
+
         images = new ArrayList<>();
         images.add(findViewById(R.id.imgQuestion1));
         images.add(findViewById(R.id.imgQuestion2));
@@ -90,6 +94,12 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             answers.get(i).setVisibility(View.VISIBLE);
             answers.get(i).setText("");
         }
+    }
+
+    @Override
+    public void setLevel(int level) {
+        this.level.setText(String.valueOf(level));
+
     }
 
     @Override
