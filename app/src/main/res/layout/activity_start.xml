@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <!-- Game Icon -->
+            <ImageView
+                android:id="@+id/gameIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/app_image"
+                android:layout_gravity="center"/>
+
+            <!-- Current Money -->
+            <TextView
+                android:id="@+id/currentMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Money: $0"
+                android:layout_marginRight="15dp"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="end|center"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#F2F2F2"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Game Title -->
+
+
+
+            <!-- Play Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/simple_button"
+                android:id="@+id/playButton"
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:text="Play"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"/>
+
+            <!-- Settings Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/settingsButton"
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:text="Settings"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/simple_button"
+                android:layout_below="@id/exitButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+
+            <!-- Exit Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/exitButton"
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:text="Exit"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/simple_button"
+                android:layout_below="@id/playButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+            <Space
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

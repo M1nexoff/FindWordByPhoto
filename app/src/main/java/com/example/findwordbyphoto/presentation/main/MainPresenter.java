@@ -1,22 +1,22 @@
 package com.example.findwordbyphoto.presentation.main;
 
 import com.example.findwordbyphoto.data.QuestionData;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainPresenter implements MainContract.Presenter{
+public class MainPresenter implements MainContract.Presenter {
     private static final int MAX_LENGTH = 8;
     private int level;
-    private List<String> answers = new ArrayList<String>();
-    private List<Boolean> variants = new ArrayList<Boolean>();
+    private List<String> answers = new ArrayList<>();
+    private List<Boolean> variants = new ArrayList<>();
     private MainContract.View view;
     private MainContract.Model model;
+
     public MainPresenter(MainContract.View view) {
         this.view = view;
         this.model = new MainModel();
-        setQuestion();
     }
+
     @Override
     public void setQuestion() {
         QuestionData question = model.getQuestionById(level);
@@ -56,8 +56,6 @@ public class MainPresenter implements MainContract.Presenter{
         }
     }
 
-
-
     @Override
     public void clickVariant(int index) {
         int freeIndex = answers.indexOf(null);
@@ -73,19 +71,33 @@ public class MainPresenter implements MainContract.Presenter{
 
     @Override
     public void check() {
-        StringBuilder answers = new StringBuilder();
-        for (int i = 0; i < this.answers.size(); i++) {
-            answers.append(this.answers.get(i));
+        StringBuilder userAnswers = new StringBuilder();
+        for (String answer : answers) {
+            if (answer != null) {
+                userAnswers.append(answer);
+            }
         }
+
         QuestionData questionData = model.getQuestionById(level);
-        String answer = questionData.getAnswer();
-        if (!answers.toString().equals(answer)) {
+        String correctAnswer = questionData.getAnswer();
+
+        if (!userAnswers.toString().equals(correctAnswer)) {
+            view.showResult("Incorrect!");
             return;
         }
+        view.showDialogNext();
+    }
+    @Override
+    public void nextLevel() {
         level++;
-        this.answers.clear();
+        answers.clear();
         variants.clear();
-        view.showResult("Correct!");
         setQuestion();
     }
+
+    @Override
+    public void menu() {
+        view.exit();
+    }
+
 }

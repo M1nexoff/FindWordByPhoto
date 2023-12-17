@@ -9,6 +9,7 @@ public interface MainContract {
         QuestionData getQuestionById(int id);
     }
     interface View {
+        void showDialogNext();
         void setImages(List<Integer> images);
         void clearAnswer();
         void setVariants(String variants);
@@ -18,8 +19,11 @@ public interface MainContract {
         void deleteAnswer(int index);
 
         void showResult(String s);
+        void exit();
     }
     interface Presenter {
+        void nextLevel();
+        void menu();
         void setQuestion();
         void clickAnswer(int index);
         void clickVariant(int index);
