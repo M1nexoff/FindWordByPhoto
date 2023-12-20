@@ -14,7 +14,7 @@ import com.example.findwordbyphoto.presentation.main.MainActivity;
 public class StartActivity extends AppCompatActivity implements StartContract.View {
     private AppCompatButton playButton;
     private AppCompatButton exitButton;
-    private AppCompatButton settingsButton;
+    private AppCompatButton newGame;
     private StartContract.Presenter presenter;
 
     @Override
@@ -27,17 +27,20 @@ public class StartActivity extends AppCompatActivity implements StartContract.Vi
     }
 
     private void initialize() {
-        playButton = (AppCompatButton) findViewById(R.id.playButton);
+        playButton = (AppCompatButton) findViewById(R.id.loadButton);
         exitButton = (AppCompatButton) findViewById(R.id.exitButton);
-        settingsButton = (AppCompatButton) findViewById(R.id.settingsButton);
+        newGame = (AppCompatButton) findViewById(R.id.newButton);
+        newGame.setOnClickListener(view -> presenter.newGame());
         playButton.setOnClickListener(view -> presenter.start());
         exitButton.setOnClickListener(view -> presenter.exit());
-
     }
 
     @Override
-    public void start() {
+    public void start(int i) {
         Intent intent = new Intent(StartActivity.this, MainActivity.class);
+        if (i==1){
+            intent.putExtra("game", "newGame");
+        }
         startActivity(intent);
     }
 

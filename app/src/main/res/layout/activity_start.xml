@@ -14,28 +14,18 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="#13BC16"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <!-- Game Icon -->
-            <ImageView
-                android:id="@+id/gameIcon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/app_image"
-                android:layout_gravity="center"/>
-
-            <!-- Current Money -->
             <TextView
-                android:id="@+id/currentMoney"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Money: $0"
-                android:layout_marginRight="15dp"
-                android:textSize="18sp"
-                android:textColor="#FFFFFF"
-                android:layout_gravity="end|center"/>
-
+                android:text="Find Word"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -50,33 +40,31 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical">
-
-            <!-- Game Title -->
-
-
-
-            <!-- Play Button -->
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/word"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:background="@drawable/simple_button"
-                android:id="@+id/playButton"
+                android:id="@+id/newButton"
                 android:layout_width="150dp"
                 android:layout_height="70dp"
-                android:text="Play"
+                android:text="New Game"
                 android:textSize="18sp"
                 android:textColor="#FFFFFF"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"/>
 
-            <!-- Settings Button -->
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/settingsButton"
+                android:id="@+id/loadButton"
                 android:layout_width="150dp"
                 android:layout_height="70dp"
-                android:text="Settings"
+                android:text="Load Game"
                 android:textSize="18sp"
                 android:textColor="#FFFFFF"
                 android:background="@drawable/simple_button"
@@ -84,7 +72,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"/>
 
-            <!-- Exit Button -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/exitButton"
                 android:layout_width="150dp"
@@ -93,13 +80,10 @@
                 android:textSize="18sp"
                 android:textColor="#FFFFFF"
                 android:background="@drawable/simple_button"
-                android:layout_below="@id/playButton"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"/>
             <Space
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="75dp"/>
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
         </LinearLayout>
 
     </FrameLayout>

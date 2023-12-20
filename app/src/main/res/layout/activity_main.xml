@@ -14,12 +14,10 @@
         android:layout_height="70dp"
         android:textSize="20dp"
         android:gravity="center"
-        android:background="@drawable/stars"
-        />
+        android:background="@drawable/stars" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -39,11 +37,10 @@
                 android:layout_height="match_parent">
                 <ImageView
                     android:id="@+id/imgQuestion1"
-                    android:layout_width="128dp"
-                    android:layout_height="128dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -55,8 +52,8 @@
                 android:layout_height="match_parent">
                 <ImageView
                     android:id="@+id/imgQuestion2"
-                    android:layout_width="128dp"
-                    android:layout_height="128dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
 
@@ -67,7 +64,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_margin="10dp"
+            android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
             android:gravity="center">
             <LinearLayout
@@ -79,8 +76,8 @@
                 android:layout_height="match_parent">
                 <ImageView
                     android:id="@+id/imgQuestion3"
-                    android:layout_width="128dp"
-                    android:layout_height="128dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
 
@@ -95,8 +92,8 @@
                 android:layout_height="match_parent">
                 <ImageView
                     android:id="@+id/imgQuestion4"
-                    android:layout_width="128dp"
-                    android:layout_height="128dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
 
@@ -184,8 +181,28 @@
 
 
         </LinearLayout>
-
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/back"
+                android:src="@drawable/back"
+                android:padding="8dp"
+                android:layout_width="70dp"
+                android:layout_height="45dp"
+                android:background="@drawable/bg_back"/>
+            <Space
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/restart"
+                android:layout_width="70dp"
+                android:src="@drawable/refresh"
+                android:padding="10dp"
+                android:layout_height="45dp"
+                style="@style/Button.Answer"/>
+        </LinearLayout>
     </LinearLayout>
-
-
 </LinearLayout>

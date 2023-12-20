@@ -1,5 +1,7 @@
 package com.example.findwordbyphoto.presentation.main;
 
+import android.content.Context;
+
 import com.example.findwordbyphoto.data.QuestionData;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,11 +16,21 @@ public class MainPresenter implements MainContract.Presenter {
 
     public MainPresenter(MainContract.View view) {
         this.view = view;
-        this.model = new MainModel();
+        this.model = new MainModel((Context) view);
+        level = model.getLevel();
     }
 
     @Override
-    public void setQuestion() {
+    public void setQuestion(String s) {
+        if (s!=null){
+            level = 0;
+            model.setLevel(level);
+        }
+        if (level>8){
+            model.setLevel(0);
+            view.exit();
+            return;
+        }
         QuestionData question = model.getQuestionById(level);
         view.clearAnswer();
         for (int i = 0; i < MAX_LENGTH; i++) {
@@ -35,7 +47,6 @@ public class MainPresenter implements MainContract.Presenter {
             variants.add(false);
         }
     }
-
     @Override
     public void clickAnswer(int index) {
         String clickedAnswer = answers.get(index);
@@ -47,7 +58,7 @@ public class MainPresenter implements MainContract.Presenter {
 
         for (int i = 0; i < variants.length(); i++) {
             String currentVariant = String.valueOf(variants.charAt(i));
-            if (clickedAnswer.equals(currentVariant)) {
+            if (clickedAnswer.equals(currentVariant) && this.variants.get(i)) {
                 answers.set(index, null);
                 view.setAnswer(index, "");
                 view.setVisibleVariant(i);
@@ -86,19 +97,37 @@ public class MainPresenter implements MainContract.Presenter {
             view.showResult("Incorrect!");
             return;
         }
+        model.setLevel(level+1);
         view.showDialogNext();
     }
+
+    @Override
+    public void save() {
+
+    }
+
+    @Override
+    public void load() {
+
+    }
+
+    @Override
+    public void restart() {
+        for (int i = 0; i < answers.size(); i++) {
+            clickAnswer(i);
+        }
+    }
+
     @Override
     public void nextLevel() {
         level++;
         answers.clear();
         variants.clear();
-        setQuestion();
+        setQuestion(null);
     }
 
     @Override
     public void menu() {
         view.exit();
     }
-
 }

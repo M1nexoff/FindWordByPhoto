@@ -1,6 +1,8 @@
 package com.example.findwordbyphoto.presentation.main;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,18 +22,26 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private List<Button> variants = new ArrayList<>();
     private TextView level;
     private MainContract.Presenter presenter;
+    private ImageView backButton;
+    private ImageView resetButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initialize();
+        String s = getIntent().getStringExtra("game");
         presenter = new MainPresenter(this);
-        presenter.setQuestion();
+        presenter.setQuestion(s);
     }
 
     private void initialize() {
         level = findViewById(R.id.level);
+        backButton = findViewById(R.id.back);
+        resetButton = findViewById(R.id.restart);
+
+        backButton.setOnClickListener(v->presenter.menu());
+        resetButton.setOnClickListener(v->presenter.restart());
 
         images = new ArrayList<>();
         images.add(findViewById(R.id.imgQuestion1));
@@ -78,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                     presenter.menu();
                 }
             });
+            dialog.setCancelable(false);
             dialog.show(getSupportFragmentManager(), "test");
     }
 
@@ -140,5 +151,11 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     @Override
     public void exit() {
         finish();
+    }
+
+    @Override
+    protected void onStop() {
+        presenter.save();
+        super.onStop();
     }
 }

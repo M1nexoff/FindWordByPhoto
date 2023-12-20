@@ -17,6 +17,9 @@
     <style name="Button.Next">
         <item name="android:background">@drawable/bg_next</item>
     </style>
+    <style name="Button.Quit">
+        <item name="android:background">@drawable/bg_quit</item>
+    </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>

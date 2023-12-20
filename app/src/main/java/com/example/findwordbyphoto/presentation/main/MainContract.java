@@ -7,6 +7,12 @@ import java.util.List;
 public interface MainContract {
     interface Model {
         QuestionData getQuestionById(int id);
+        List<String> getAnswers();
+        List<Boolean> getVariants();
+        int getLevel();
+        void setLevel(int level);
+        void setAnswers(List<String> answers);
+        void setVariants(List<Boolean> variants);
     }
     interface View {
         void showDialogNext();
@@ -23,11 +29,14 @@ public interface MainContract {
         void exit();
     }
     interface Presenter {
+        void restart();
         void nextLevel();
         void menu();
-        void setQuestion();
+        void setQuestion(String newOrLoad);
         void clickAnswer(int index);
         void clickVariant(int index);
         void check();
+        void save();
+        void load();
     }
 }
