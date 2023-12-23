@@ -14,17 +14,14 @@ import androidx.fragment.app.DialogFragment;
 
 import com.example.findwordbyphoto.R;
 
-
 public class MyDialog extends DialogFragment {
     SelectListener listener;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         this.getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         return inflater.inflate(R.layout.dialog, container);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -32,13 +29,11 @@ public class MyDialog extends DialogFragment {
             listener.next();
             dismiss();
         });
-
         view.findViewById(R.id.menuButton).setOnClickListener(v -> {
             listener.menu();
             dismiss();
         });
     }
-
     public void setSelectListener(SelectListener listener) {
         this.listener = listener;
     }

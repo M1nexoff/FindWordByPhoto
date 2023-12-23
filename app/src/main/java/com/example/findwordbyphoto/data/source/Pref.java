@@ -20,6 +20,12 @@ public class Pref {
         }
         return instance;
     }
+    public void saveScore(int score) {
+        pref.edit().putInt("SCORE", score).apply();
+    }
+    public int getScore() {
+        return pref.getInt("SCORE", 0);
+    }
     public void saveButtonsAnswers(List<String> s){
         StringBuilder sb = new StringBuilder();
         for (String answer : s) {

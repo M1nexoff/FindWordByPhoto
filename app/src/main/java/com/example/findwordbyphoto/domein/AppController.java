@@ -24,6 +24,11 @@ public class AppController {
         pref = Pref.getInstance(context);
         level = pref.getLastLevel();
     }
+    public int getScore(){
+        return pref.getScore();
+    }
+    public void saveScore(int score){pref.saveScore(score);
+    }
     public List<String> getButtonsAnswers(){
         return pref.getButtonsAnswers();
     }

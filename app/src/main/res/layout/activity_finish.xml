@@ -23,13 +23,28 @@
     <Space
         android:layout_width="100dp"
         android:layout_height="100dp"/>
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/finish"
-        android:layout_width="150dp"
-        style="@style/Button.Next"
-        android:layout_marginBottom="150dp"
-        android:text="Restart\nGame"
-        android:textSize="18dp"
-        android:layout_height="80dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/menu"
+            android:layout_width="120dp"
+            style="@style/Button.Next"
+            android:layout_marginBottom="150dp"
+            android:text="Menu"
+            android:textSize="18dp"
+            android:layout_height="80dp"/>
+        <Space
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/finish"
+            android:layout_width="120dp"
+            style="@style/Button.Next"
+            android:layout_marginBottom="140dp"
+            android:text="Restart"
+            android:textSize="18dp"
+            android:layout_height="80dp"/>
+    </LinearLayout>
     
 </LinearLayout>

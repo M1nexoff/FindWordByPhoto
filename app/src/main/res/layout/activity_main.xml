@@ -37,8 +37,8 @@
                 android:layout_height="match_parent">
                 <ImageView
                     android:id="@+id/imgQuestion1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
             </LinearLayout>
@@ -52,8 +52,8 @@
                 android:layout_height="match_parent">
                 <ImageView
                     android:id="@+id/imgQuestion2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
 
@@ -76,8 +76,8 @@
                 android:layout_height="match_parent">
                 <ImageView
                     android:id="@+id/imgQuestion3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
 

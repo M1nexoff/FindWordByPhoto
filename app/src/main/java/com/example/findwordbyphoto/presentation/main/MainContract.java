@@ -15,6 +15,7 @@ public interface MainContract {
         void setVariants(List<Boolean> variants);
     }
     interface View {
+        void startFinish();
         void showDialogNext();
         void setImages(List<Integer> images);
         void clearAnswer();

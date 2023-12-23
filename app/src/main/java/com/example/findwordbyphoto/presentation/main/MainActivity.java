@@ -1,8 +1,8 @@
 package com.example.findwordbyphoto.presentation.main;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.findwordbyphoto.R;
+import com.example.findwordbyphoto.presentation.Finish;
 import com.example.findwordbyphoto.presentation.dialog.*;
 
 import java.util.ArrayList;
@@ -157,5 +158,11 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     protected void onStop() {
         presenter.save();
         super.onStop();
+    }
+    @Override
+    public void startFinish() {
+        Intent intent = new Intent(MainActivity.this, Finish.class);
+        startActivity(intent);
+        finish();
     }
 }

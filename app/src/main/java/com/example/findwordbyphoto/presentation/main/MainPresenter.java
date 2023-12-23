@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainPresenter implements MainContract.Presenter {
+    private  int score = 0;
     private static final int MAX_LENGTH = 8;
     private int level;
     private List<String> answers = new ArrayList<>();
@@ -28,7 +29,7 @@ public class MainPresenter implements MainContract.Presenter {
         }
         if (level>8){
             model.setLevel(0);
-            view.exit();
+            view.startFinish();
             return;
         }
         QuestionData question = model.getQuestionById(level);
